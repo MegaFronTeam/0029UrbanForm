@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="utf-8">
+		<title>тест dffsdf dfsdтест 2222</title>
+		<meta name="description" content="о чем страница">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,  shrink-to-fit=no, viewport-fit=cover">
+		<link type="image/ico" href="img/favicon.ico" rel="shortcut icon"><meta name="format-detection" content="telephone=no"> 
+		<link href="libs/@fancyapps/ui/fancybox/fancybox.css" rel="stylesheet"/>
+		<link href="css/main.min.css" rel="stylesheet"/>
+		<script>
+			function addBlock(elem) {
+				fetch(`parts/${elem}.html`)
+					.then(response => response.text())
+					.then( text => {
+						const wrap = document.querySelector(`#${elem}Wrap`);
+						wrap.insertAdjacentHTML('afterend', text);
+						wrap.previousElementSibling.remove()
+						wrap.remove();
+					});
+			}
+		</script>
+	</head>
+	<body class="main-page">
+		<div class="main-wrapper">
+			<script>addBlock(`header`)</script>
+			<div id="headerWrap"></div>
+			<main> 
+				<!-- start sForm-->
+				<section class="sForm section" id="sForm">
+					<div class="container">
+						<div class="section-title text-center">
+							<h1>Регистрация на&nbsp;программу Урбан Лидер. СТАРТ </h1>
+						</div>
+						<div class="form-wrap">
+							<form>
+								<div class="form-wrap__title">Заполните и&nbsp;отправьте заявку
+								</div>
+								<div class="form-wrap__input-wrap form-group">
+									<label><span class="form-wrap__input-title">ФИО<img src="img/star.svg" alt=""/></span><input class="form-wrap__input form-control is-valid" inputmode="text" name="text" type="text" placeholder="Фамилия Имя Отчество" required="required"/>
+									</label>
+								</div>
+								<!-- +e.input-wrap-->
+								<div class="form-wrap__input-wrap form-group">
+									<label><span class="form-wrap__input-title">ОИВ<img src="img/star.svg" alt=""/></span><input class="form-wrap__input form-control" inputmode="text" name="text" type="text" placeholder="ОИВ" required="required"/>
+									</label>
+								</div>
+								<!-- +e.input-wrap-->
+								<div class="form-wrap__input-wrap form-group">
+									<label><span class="form-wrap__input-title">Организация (при наличии) <img src="img/star.svg" alt=""/></span><input class="form-wrap__input form-control" inputmode="text" name="text" type="text" placeholder="Название организации"/>
+									</label>
+								</div>
+								<!-- +e.input-wrap-->
+								<div class="form-wrap__input-wrap form-group">
+									<label><span class="form-wrap__input-title">Занимаемая должность<img src="img/star.svg" alt=""/></span><input class="form-wrap__input form-control" inputmode="text" name="text" type="text" placeholder="Должность" required="required"/>
+									</label>
+								</div>
+								<!-- +e.input-wrap-->
+								<div class="form-wrap__input-wrap form-group">
+									<label><span class="form-wrap__input-title">Электронная почта<img src="img/star.svg" alt=""/></span><input class="form-wrap__input form-control" inputmode="email" name="email" type="email" placeholder="Служебная почта" required="required"/>
+									</label>
+								</div>
+								<!-- +e.input-wrap-->
+								<div class="form-wrap__input-wrap form-group">
+									<label><span class="form-wrap__input-title">Номер телефона<img src="img/star.svg" alt=""/></span><input class="form-wrap__input form-control is-invalid" inputmode="tel" name="tel" type="tel" placeholder="+7 (___) ___–__–__" required="required"/>
+										<div class="invalid-feedback">Мы собираем телефонные номера для оперативной связи с вами по организационным и техническим вопросам.</div>
+									</label>
+								</div>
+								<!-- +e.input-wrap-->
+								<button class="form-wrap__btn btn btn-primary" type="submit">Отправить заявку
+								</button>
+								<div class="form-wrap__policy">Нажимая кнопку &laquo;Отправить заявку&raquo;, вы&nbsp;принимаете условия <a data-fancybox="data-fancybox" data-type="ajax" href="modal/policy-modal.html">политики обработки персональных данных</a>.
+								</div>
+							</form>
+						</div>
+					</div>
+				</section>
+				<!-- end sForm-->
+			</main>
+			<script>addBlock(`footer`)</script>
+			<div id="footerWrap"></div>
+		</div>
+		<script src="libs/@fancyapps/ui/fancybox/fancybox.umd.js"> </script>
+		<script src="libs/inputmask/inputmask.min.js"> </script>
+		<script src="js/JSCCommon.js"></script>
+		<script src="js/common.js"></script>
+	</body>
+</html>

@@ -1,0 +1,18 @@
+mixin sForm()
+	// start sForm
+	+b.SECTION.sForm.section#sForm&attributes(attributes)
+		.container
+			+b.section-title.text-center
+				h1 Регистрация на&nbsp;программу Урбан Лидер. СТАРТ 
+			+form-wrap
+				+e.title Заполните и&nbsp;отправьте заявку
+				+input("Фамилия Имя Отчество",'text','ФИО')(required).is-valid
+				+input("ОИВ",'text','ОИВ')(required)
+				+input("Название организации",'text','Организация (при наличии) ')
+				+input("Должность",'text','Занимаемая должность')(required)
+				+input("Служебная почта",'email','Электронная почта')(required)
+				+input('+7 (___) ___–__–__','tel',"Номер телефона")(required).is-invalid
+					.invalid-feedback Мы собираем телефонные номера для оперативной связи с вами по организационным и техническим вопросам.
+				+e.btn.btn.btn-primary(type="submit") Отправить заявку
+				+policy
+	// end sForm
