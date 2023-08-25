@@ -23,7 +23,7 @@
 	}
 	.container{
 
-		max-width: calc(826px + 32px);
+		// max-width: calc(826px + 32px);
 	}
 	
 	@include media-breakpoint-up(xl) {}

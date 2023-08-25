@@ -9,10 +9,6 @@ class JSCCommon {
 		Fancybox.bind('[data-fancybox]', {
 			autoFocus: false,
 			placeFocusBack: false,
-		});
-		Fancybox.bind(link, {
-			arrows: false,
-			// // infobar: false,
 			touch: false,
 			trapFocus: false,
 			placeFocusBack: false,
@@ -37,6 +33,15 @@ class JSCCommon {
 				AJAX_FORBIDDEN: "Ошибка при загрузке AJAX: запрещено",
 				IFRAME_ERROR: "Ошибка загрузки iframe",
 			},
+			on: {
+				done: (fancybox) => {
+					this.setCustomScrollbar();
+				},
+			},
+		});
+		Fancybox.bind(link, {
+			arrows: false,
+			// // infobar: false,
 		});
 		document.querySelectorAll(".modal-close-js").forEach(el => {
 			el.addEventListener("click", () => {
@@ -51,9 +56,16 @@ class JSCCommon {
 		// mask for input
 		let InputTel = [].slice.call(document.querySelectorAll('input[type="tel"]'));
 		Inputmask({ "mask": "+7 (999) 999–99–99", showMaskOnHover: false }).mask(InputTel);
+	}
+	static setCustomScrollbar() {
+		$(".custom-scroll").mCustomScrollbar({
+			theme: 'minimal-dark',
+			alwaysShowScrollbar: true
+		});
 	} 
 	static init() {
 		this.modalCall(); 
 		this.inputMask();
+		this.setCustomScrollbar();
 	}
 };

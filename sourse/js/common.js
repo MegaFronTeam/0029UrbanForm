@@ -2,9 +2,7 @@
 function eventHandler() {
 
 	JSCCommon.init()
-
-
-
+ 
 };
 if (document.readyState !== 'loading') {
 	eventHandler();

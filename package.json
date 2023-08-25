@@ -44,6 +44,8 @@
   },
   "dependencies": {
     "@fancyapps/ui": "^5.0.16",
-    "inputmask": "^5.0.8"
+    "inputmask": "^5.0.8",
+    "jquery": "^3.6.1",
+    "malihu-custom-scrollbar-plugin": "^3.1.5"
   }
 }
