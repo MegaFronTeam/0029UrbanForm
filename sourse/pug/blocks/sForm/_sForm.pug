@@ -7,7 +7,8 @@ mixin sForm()
 			+form-wrap
 				+e.title Заполните и&nbsp;отправьте заявку
 				+input("Фамилия Имя Отчество",'text','ФИО')(required).is-valid
-				+input("ОИВ",'text','ОИВ')(required)
+				+input("ОИВ",'text','ОИВ')(required).is-invalid
+					.invalid-feedback Мы собираем телефонные
 				+input("Название организации",'text','Организация (при наличии) ')
 				+input("Должность",'text','Занимаемая должность')(required)
 				+input("Служебная почта",'email','Электронная почта')(required)
