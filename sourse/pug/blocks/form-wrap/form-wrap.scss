@@ -8,11 +8,41 @@
 			// left: 0;
 			// top: calc(100% );
 		}
+		position: relative;
+		&.is-valid{
+			&::after{
+				content: $form-feedback-icon-valid;
+				position: absolute;
+				z-index: 2;
+				pointer-events: none;
+				@include media-breakpoint-up(sm) {
+					top: rem(42);
+				}
+				top: 42px;
+				right: rem(10);
+			} 
+		}
 	}
 	&__input {
+		padding-right: rem(30);
+		&.is-valid{
+			
+		}
 		// @extend .form-control;
 		//  outline: 0 !important;
 		resize: none;
+		
+		&:-webkit-autofill,
+		&:-webkit-autofill:hover, 
+		&:-webkit-autofill:focus, 
+		&:-webkit-autofill:active{
+				// -webkit-background-clip: text;
+				// -webkit-text-fill-color: #ffffff;
+				transition: background-color 5000s ease-in-out 0s;
+				box-shadow: inset 0 0 20px 20px #23232329;
+ 
+				background-position: right calc(0.375em + 0.18056rem) center;
+		}
 	}
 	&__input-title{
 		font-weight: bold;

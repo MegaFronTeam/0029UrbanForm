@@ -21,7 +21,7 @@ mixin input(placeholder,  t='text', label, inputmode= t, name= t)
 			+e.INPUT.input.form-control(inputmode= inputmode name=name type=t )&attributes(attributes)
 		else
 			+e.INPUT.input.form-control(inputmode= inputmode name=name type=t placeholder=placeholder)&attributes(attributes)
-	+e.input-wrap.form-group
+	+e.input-wrap.form-group&attributes(attributes)
 		if label
 			label
 				+e.SPAN.input-title= label
